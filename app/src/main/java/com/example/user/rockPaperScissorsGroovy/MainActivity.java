@@ -39,4 +39,28 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void onPaperButtonClicked(View button) {
+
+        Move playerMove = player.getMovePaper();
+        Move computerMove = computer.getMove();
+        int winner = game.compareMoves(playerMove, computerMove);
+
+        Intent intent = new Intent(this, ShowWinnerActivity.class);
+        intent.putExtra("displayWinner", game.displayWinner(winner));
+        startActivity(intent);
+
+    }
+
+    public void onScissorsButtonClicked(View button) {
+
+        Move playerMove = player.getMoveRock();
+        Move computerMove = computer.getMove();
+        int winner = game.compareMoves(playerMove, computerMove);
+
+        Intent intent = new Intent(this, ShowWinnerActivity.class);
+        intent.putExtra("displayWinner", game.displayWinner(winner));
+        startActivity(intent);
+
+    }
 }
