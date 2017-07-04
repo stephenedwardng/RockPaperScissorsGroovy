@@ -42,17 +42,16 @@ public class Game {
         }
     }
 
-    public void displayWinner(int result){
+    public String displayWinner(int result){
         switch (result){
             case 0:
-                System.out.println("Draw");
-                break;
+                return "Draw";
             case 1:
-                System.out.println("Player wins");
-                break;
+                return "Player wins";
             case -1:
-                System.out.println("Computer wins");
+                return "Computer wins";
         }
+        return null;
     }
 
 }

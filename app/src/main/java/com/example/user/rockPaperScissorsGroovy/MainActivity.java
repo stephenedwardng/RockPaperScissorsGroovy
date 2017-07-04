@@ -33,12 +33,9 @@ public class MainActivity extends AppCompatActivity {
         Move playerMove = player.getMoveRock();
         Move computerMove = computer.getMove();
         int winner = game.compareMoves(playerMove, computerMove);
-        game.displayWinner(winner);
-
-
 
         Intent intent = new Intent(this, ShowWinnerActivity.class);
-        intent.putExtra("countWords", .prettyCountWords());
+        intent.putExtra("displayWinner", game.displayWinner(winner));
         startActivity(intent);
 
     }
