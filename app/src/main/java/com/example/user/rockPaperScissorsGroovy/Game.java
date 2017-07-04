@@ -36,11 +36,11 @@ public class Game {
     public String displayWinner(int result){
         switch (result){
             case 0:
-                return String.format("The computer played %s. It is a draw.", computer.getMove());
+                return "It is a draw.";
             case 1:
-                return String.format("The computer played %s. Player wins.", computer.getMove());
+                return "Player wins.";
             case -1:
-                return String.format("The computer played %s. Computer wins.", computer.getMove());
+                return "Computer wins.";
         }
         return null;
     }
