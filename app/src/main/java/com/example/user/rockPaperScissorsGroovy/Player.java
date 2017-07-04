@@ -1,7 +1,5 @@
 package com.example.user.rockPaperScissorsGroovy;
 
-import java.util.Scanner;
-
 import behaviours.Move;
 
 /**
@@ -10,25 +8,16 @@ import behaviours.Move;
 
 public class Player {
 
-    private Scanner scan;
-
-    public Player(){
-        scan = new Scanner(System.in);
+    public Move getMoveRock(){
+        return Move.ROCK;
     }
 
-    public Move getMove(){
-        System.out.println("Choose R, P or S");
-        String input = scan.nextLine().toUpperCase();
-        char choice = input.charAt(0);
-        switch(choice){
-            case 'R' :
-                return Move.ROCK;
-            case 'P' :
-                return Move.PAPER;
-            case 'S' :
-                return Move.SCISSORS;
-            default :
-                return null;
-        }
+    public Move getMovePaper(){
+        return Move.PAPER;
     }
+
+    public Move getMoveScissors(){
+        return Move.SCISSORS;
+    }
+
 }

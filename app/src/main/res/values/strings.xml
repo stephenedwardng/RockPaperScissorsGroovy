@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">WordCounter</string>
-    <string name="sentence">Enter a sentence</string>
-    <string name="count">Count words</string>
+    <string name="app_name">Rock Paper Scissors Groovy</string>
+    <string name="rock">Rock</string>
 </resources>

@@ -6,31 +6,39 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
+import behaviours.Move;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText sentenceEditText;
-    Button buttonSentence;
-    Sentence sentence;
+    Button buttonRockInstance;
+    Player player;
+    Computer computer;
+    Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sentenceEditText = (EditText)findViewById(R.id.sentenceId);
-        buttonSentence = (Button)findViewById(R.id.buttonId);
+        buttonRockInstance = (Button)findViewById(R.id.buttonRockId);
+        player = new Player();
+        computer = new Computer();
+        game = new Game();
+
     }
 
-    public void onButtonClicked(View button) {
-        String phrase = sentenceEditText.getText().toString();
-        sentence = new Sentence(phrase);
+    public void onRockButtonClicked(View button) {
 
-        Log.d("count", sentence.prettyCountWords());
+        Move playerMove = player.getMoveRock();
+        Move computerMove = computer.getMove();
+        int winner = game.compareMoves(playerMove, computerMove);
+        game.displayWinner(winner);
+
+
 
         Intent intent = new Intent(this, ShowWinnerActivity.class);
-        intent.putExtra("countWords", sentence.prettyCountWords());
+        intent.putExtra("countWords", .prettyCountWords());
         startActivity(intent);
 
     }

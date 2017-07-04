@@ -16,16 +16,16 @@ public class Game {
         computer = new Computer();
     }
 
-    public void playGame(){
-        Move computerMove = computer.getMove();
-        Move playerMove = player.getMove();
-        System.out.println("You played " + playerMove.getType());
-        System.out.println("Computer played " + computerMove.getType());
-        int winner = compareMoves(playerMove, computerMove);
-        displayWinner(winner);
-    }
+//    public void playGame(){
+//        Move computerMove = computer.getMove();
+//        Move playerMove = player.getMove();
+//        System.out.println("You played " + playerMove.getType());
+//        System.out.println("Computer played " + computerMove.getType());
+//        int winner = compareMoves(playerMove, computerMove);
+//        displayWinner(winner);
+//    }
 
-    private int compareMoves(Move playerMove, Move computerMove) {
+    public int compareMoves(Move playerMove, Move computerMove) {
         if (playerMove == computerMove){
             return 0;
         }
@@ -42,7 +42,7 @@ public class Game {
         }
     }
 
-    private void displayWinner(int result){
+    public void displayWinner(int result){
         switch (result){
             case 0:
                 System.out.println("Draw");
